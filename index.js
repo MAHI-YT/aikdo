@@ -1,3 +1,4 @@
+
 const axios = require('axios')
 const config = require('./config')
 const {
@@ -165,12 +166,13 @@ async function connectToWA() {
             console.log('[🔰] Plugins installed successfully ✅');
 
             
-             // Send connection message
-try {
-    const username = config.REPO.split('/').slice(3, 4)[0];
-    const mrfrank = `https://github.com/${username}`;
-
-    const upMessage = `┏━━━━━━━━━━━━━━━━━━┓
+                // Send connection message
+     	
+                try {
+                    const username = config.REPO.split('/').slice(3, 4)[0];
+                    const mrfrank = `https://github.com/${username}`;
+                    
+                    const upMessage = `┏━━━━━━━━━━━━━━━━━━┓
 ┃ *💡INTELLIGENT BOT SYSTEM*
 ┃━━━━━━━━━━━━━━━━━━━
 ┃ *🔰 DARKZONE-MD | 6.0.0 |* 
@@ -185,20 +187,25 @@ try {
 ┃ ▸ *Owner:* 𝐸𝑅𝐹𝒜𝒩 𝒜𝐻𝑀𝒜𝒟
 ┗━━━━━━━━━━━━━━━━━━┛
 
-⭐ *Channel:* https://whatsapp.com/channel/0029Vb5dDVO59PwTnL86j13J
-⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork`;
+⭐ *Channel:* https://whatsapp.com/channel/0029Vb5dDVO59PwTnL86j13J  
+⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork `;
+                    
+                    await conn.sendMessage(conn.user.id, { 
+                        image: { url: `https://ibb.co/JwLXd3XJ` }, 
+                        caption: upMessage 
+                    });
+                    
+                } catch (sendError) {
+                    console.error('[🔰] Error sending messages:', sendError);
+                }
+            }
 
-    const jid = (conn.user?.id || conn.user?.jid) + "@s.whatsapp.net";
-
-    await conn.sendMessage(jid, { 
-        image: { url: "https://ibb.co/JwLXd3XJ" }, 
-        caption: upMessage 
+        if (qr) {
+            console.log('[🔰] Scan the QR code to connect or use session ID');
+        }
     });
 
-} catch (sendError) {
-    console.error('[🔰] Error sending messages:', sendError);
-}
-
+    conn.ev.on('creds.update', saveCreds);
 	
 // =====================================
 	 
