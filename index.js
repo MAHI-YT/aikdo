@@ -191,7 +191,7 @@ try {
     const jid = (conn.user?.id || conn.user?.jid) + "@s.whatsapp.net";
 
     await conn.sendMessage(jid, { 
-        image: { url: "https://files.catbox.moe/jecbfo.jpg" }, 
+        image: { url: "https://ibb.co/JwLXd3XJ" }, 
         caption: upMessage 
     });
 
