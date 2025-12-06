@@ -1,4 +1,3 @@
-
 const axios = require('axios')
 const config = require('./config')
 const {
@@ -191,7 +190,7 @@ async function connectToWA() {
 ⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork `;
                     
                     await conn.sendMessage(conn.user.id, { 
-                        image: { url: `https://ibb.co/JwLXd3XJ` }, 
+                        image: { url: `https://ibb.co/Vc5BSbj8` }, 
                         caption: upMessage 
                     });
                     
@@ -1061,3 +1060,4 @@ app.get('/', (req, res) => {
   setTimeout(() => {
   connectToWA()
   }, 4000);
+
