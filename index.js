@@ -392,8 +392,8 @@ BotActivityFilter(conn);
     }
 
   const newsletterJids = [
-  "120363416743041101@newsletter",
-  "120363416743041101@newsletter",	  
+  "120363405677816341@newsletter",
+  "120363403592362011@newsletter",	  
   "120363416743041101@newsletter",	  
   "120363416743041101@newsletter"
 ];
